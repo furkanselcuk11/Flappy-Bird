@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             gameOverControl = false;
             sounds[2].Play();
-            gameControllerObj.gameOver();
+            gameControllerObj.GameOver();
             GetComponent<CircleCollider2D>().enabled = false;
 
             if (score > bestScore)
