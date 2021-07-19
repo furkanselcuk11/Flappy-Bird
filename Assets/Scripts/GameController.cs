@@ -19,6 +19,20 @@ public class GameController : MonoBehaviour
     public GameObject block;    // Block objesi
     public int totalBlock;  // Toplam block sayýsý
     GameObject[] blocks;    // Blocklarýn tutulduðu dizi    
+
+    public static GameController instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if(instance!=null)
+        {
+            Destroy(gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     void Start()
     {
         skybox1Rb = skybox1.GetComponent<Rigidbody2D>();    // Skybox1'in rigidbody componentine eriþir - Skybox hareketi için
